@@ -14,6 +14,29 @@
  4) What are the tools that help to find bugs or perform static analysis?
     PyChecker is a static analysis tool that detects the bugs in Python source code and warns about the style and complexity of the bug. 
     Pylint is another tool that verifies whether the module meets the coding standard.
+ 
  5) What is the difference between Xrange and range?
     Xrange returns the xrange object while range returns the list, and uses the same memory and no matter what the range size is.
- 6) 
+    unlike range(), xrange() doesn't generate a static list, it creates the value on the go.his technique is commonly used with an object type generators and has been termed as "yielding".
+    Yielding is crucial in applications where memory is a constraint. 
+    Creating a static list as in range() can lead to a Memory Error in such conditions, while, xrange() can handle it optimally by using just enough memory for the generator. 
+ 
+ 6) Pickling
+    Python library offers a feature - serialization out of the box. 
+    Serializing a object refers to transforming it into a format that can be stored, so as to be able to deserialize it later on, 
+    to obtain the original object. Here, the pickle module comes into play.
+    Pickling is the name of the serialization process in Python. Any object in Python can be serialized into a byte stream and dumped as a file in the memory. The process of pickling is compact but pickle objects can be compressed further. Moreover, pickle keeps track of the objects it has serialized and the serialization is portable across versions.
+    The function used for the above process is pickle.dump().
+ 
+ 7) Unpickling
+    Unpickling is the complete inverse of pickling. It deserializes the byte stream to recreate the objects stored in the file, and loads the object to memory.
+    The function used for the above process is pickle.load().
+   
+ 8)  What is the difference between .py and .pyc files?
+    .py files contain the source code of a program. Whereas, .pyc file contains the bytecode of your program. 
+    We get bytecode after compilation of .py file (source code). .pyc files are not created for all the files that you run. 
+    It is only created for the files that you import.
+    Before executing a python program python interpreter checks for the compiled files. If the file is present, the virtual machine executes it. If not found, it checks for .py file. If found, compiles it to .pyc file and then python virtual machine executes it.
+    Having .pyc file saves you the compilation time.
+    
+ 
